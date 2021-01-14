@@ -3,7 +3,7 @@
         {
             "debut": 1981,
             "id": 2,
-            "image_path": "./images/mario.png",
+            "image_path": "./api/images/mario.png",
             "moves": "Super Jump Punch,Fireball,Mario Tornado,Cape",
             "name": "Mario",
             "tier": "E",
@@ -13,7 +13,7 @@
         {
             "debut": 1983,
             "id": 3,
-            "image_path": "./images/luigi.png",
+            "image_path": "./api/images/luigi.png",
             "moves": "Super Jump Punch,Fireball,Luigi Cyclone,Throat Thrust,Green Missile",
             "name": "Luigi",
             "tier": "D",
@@ -23,7 +23,7 @@
         {
             "debut": 1990,
             "id": 4,
-            "image_path": "./images/yoshi.png",
+            "image_path": "./api/images/yoshi.png",
             "moves": "Egg Lay,Egg Throw,Egg Roll,Yoshi Bomb",
             "name": "Yoshi",
             "tier": "D",
