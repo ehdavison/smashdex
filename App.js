@@ -40,10 +40,32 @@ const App = ({navigation}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="home">
-        <Stack.Screen name="Index" options={({navigation}) => ({})}>
+        <Stack.Screen
+          name="Index"
+          options={{
+            headerTitle: () => (
+              <Image
+                style={{
+                  width: 60,
+                  height: 50,
+                }}
+                source={require('./api/images/icon.png')}></Image>
+            ),
+          }}>
           {(props) => <Index {...props} setCharacter={setCharacter} />}
         </Stack.Screen>
-        <Stack.Screen name="Detail" options={({navigation}) => ({})}>
+        <Stack.Screen
+          name="Detail"
+          options={{
+            headerTitle: () => (
+              <Image
+                style={{
+                  width: 60,
+                  height: 50,
+                }}
+                source={require('./api/images/icon.png')}></Image>
+            ),
+          }}>
           {(props) => <Detail {...props} character={character} />}
         </Stack.Screen>
       </Stack.Navigator>
