@@ -10,15 +10,19 @@ const Detail = (props) => {
       <ScrollView>
         <Text>{character.name}</Text>
         <Image source={path} />
-        <Text>Debut: {character.debut}</Text>
-        <Text>Moves: {character.moves}</Text>
-        <Text>Universe: {character.universe}</Text>
-        <Text>Weight: {character.weight}</Text>
+        <Text style={styles.info}>Debut: {character.debut}</Text>
+        <Text style={styles.info}>Moves: {character.moves}</Text>
+        <Text style={styles.info}>Universe: {character.universe}</Text>
+        <Text style={styles.info}>Weight: {character.weight}</Text>
       </ScrollView>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  info: {
+    textAlign: 'center',
+  },
+});
 
 export default Detail;

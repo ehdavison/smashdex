@@ -28,7 +28,7 @@ const Index = (props) => {
                   })
                 }>
                 <View style={styles.charCard}>
-                  <Text>{character.name}</Text>
+                  <Text style={styles.cardName}>{character.name}</Text>
                   <Image source={path} />
                 </View>
               </TouchableOpacity>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 5,
     marginBottom: 20,
-    borderColor: '#45009E',
+    borderColor: '#450045',
     borderRadius: 14,
     borderWidth: 5,
     justifyContent: 'center',
@@ -75,6 +75,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 350,
     backgroundColor: 'transparent',
+  },
+  cardName: {
+    fontSize: 25,
+    marginTop: 3,
   },
 });
 
