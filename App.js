@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -34,21 +34,18 @@ import Characters from './api/characters.json';
 import Images from './api/images/Images';
 import {createStackNavigator} from '@react-navigation/stack';
 
-const App = () => {
+const App = ({navigation}) => {
   const Stack = createStackNavigator();
+  const [character, setCharacter] = useState();
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="home">
-        <Stack.Screen
-          name="Index"
-          component={Index}
-          options={({navigation}) => ({})}
-        />
-        <Stack.Screen
-          name="Detail"
-          component={Detail}
-          options={({navigation}) => ({})}
-        />
+        <Stack.Screen name="Index" options={({navigation}) => ({})}>
+          {(props) => <Index {...props} setCharacter={setCharacter} />}
+        </Stack.Screen>
+        <Stack.Screen name="Detail" options={({navigation}) => ({})}>
+          {(props) => <Detail {...props} character={character} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
