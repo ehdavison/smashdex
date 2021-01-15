@@ -30,32 +30,28 @@ import {
 import Detail from './components/Detail';
 import Index from './components/Index';
 import {NavigationContainer} from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack'
 import Characters from './api/characters.json';
 import Images from './api/images/Images';
+import {createStackNavigator} from '@react-navigation/stack';
 
 const App = () => {
+  const Stack = createStackNavigator();
   return (
-    <View>
-      <Index></Index>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="home">
+        <Stack.Screen
+          name="Index"
+          component={Index}
+          options={({navigation}) => ({})}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
+          options={({navigation}) => ({})}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 150,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  characters: {
-    margin: 5,
-    borderColor: 'black',
-    borderRadius: 14,
-    borderWidth: 5,
-  },
-});
 
 export default App;
