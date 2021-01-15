@@ -14,15 +14,11 @@ import Images from '../api/images/Images';
 
 const Index = (props) => {
   const mappedCharacters = Characters.characters;
-  const fuck = () => {
-    Alert.alert('fuck');
-  };
   return (
     <View style={styles.container}>
       <Text>SmashDex</Text>
       {mappedCharacters.map((character, index) => {
         let path = Images[character.name.toLowerCase()];
-        console.log(character.name.toLowerCase());
         return (
           <View style={styles.characters} key={index}>
             <TouchableOpacity
