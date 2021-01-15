@@ -1,19 +1,17 @@
-import React from 'react'
-import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import React from 'react';
+import {View, Text, ScrollView, StyleSheet} from 'react-native';
 
+const Detail = (props) => {
+  return (
+    <View>
+      <ScrollView>
+        <Text>{props.route.params.selectedCharacter.name}</Text>
+        {/* <Image source={} /> */}
+      </ScrollView>
+    </View>
+  );
+};
 
-const Detail = () => {
-    return (
-        <View>
-            <ScrollView>
-                <Text>Hello Bitches DETAIL VIEW</Text>
-            </ScrollView>
-        </View>
-    )
-}
+const styles = StyleSheet.create({});
 
-const styles = StyleSheet.create({
-
-})
-
-export default Detail
+export default Detail;

@@ -12,7 +12,7 @@ import {
 import Characters from '../api/characters.json';
 import Images from '../api/images/Images';
 
-const Index = () => {
+const Index = (props) => {
   const mappedCharacters = Characters.characters;
   const fuck = () => {
     Alert.alert('fuck');
@@ -25,7 +25,12 @@ const Index = () => {
         console.log(character.name.toLowerCase());
         return (
           <View style={styles.characters} key={index}>
-            <TouchableOpacity onPress={fuck}>
+            <TouchableOpacity
+              onPress={() =>
+                props.navigation.navigate('Detail', {
+                  selectedCharacter: character,
+                })
+              }>
               <Text>{character.name}</Text>
               <Image source={path} />
             </TouchableOpacity>
