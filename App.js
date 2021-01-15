@@ -35,34 +35,26 @@ import Characters from './api/characters.json';
 import Images from './api/images/Images';
 
 const App = () => {
-  const mappedCharacters = Characters.characters;
-  const selectedCharacter = mappedCharacters.map((character) => {
-    return character;
-  });
   return (
-    <View style={styles.container}>
-      <Button title="hello" onPress={console} />
-      {mappedCharacters.map((character) => {
-        let path = Images[character.name.toLowerCase()];
-        console.log(character.name.toLowerCase());
-        return (
-          <View>
-            <Text>{character.name}</Text>
-            <Image source={path} />
-          </View>
-        );
-      })}
+    <View>
+      <Index></Index>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 200,
+    marginTop: 150,
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  characters: {
+    margin: 5,
+    borderColor: 'black',
+    borderRadius: 14,
+    borderWidth: 5,
   },
 });
 
