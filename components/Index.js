@@ -15,31 +15,33 @@ import Images from '../api/images/Images';
 const Index = (props) => {
   const mappedCharacters = Characters.characters;
   return (
-    <View style={styles.container}>
-      <Text>SmashDex</Text>
-      {mappedCharacters.map((character, index) => {
-        let path = Images[character.name.toLowerCase()];
-        return (
-          <View style={styles.characters} key={index}>
-            <TouchableOpacity
-              onPress={() =>
-                props.navigation.navigate('Detail', {
-                  selectedCharacter: character,
-                })
-              }>
-              <Text>{character.name}</Text>
-              <Image source={path} />
-            </TouchableOpacity>
-          </View>
-        );
-      })}
+    <View contentContainerStyle={styles.container}>
+      <ScrollView style={styles.scrollContainer}>
+        {mappedCharacters.map((character, index) => {
+          let path = Images[character.name.toLowerCase()];
+          return (
+            <View style={styles.characters} key={index}>
+              <TouchableOpacity
+                onPress={() =>
+                  props.navigation.navigate('Detail', {
+                    selectedCharacter: character,
+                  })
+                }>
+                <View style={styles.charCard}>
+                  <Text>{character.name}</Text>
+                  <Image source={path} />
+                </View>
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 100,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -55,9 +57,24 @@ const styles = StyleSheet.create({
     shadowRadius: 3.8,
     elevation: 5,
     margin: 5,
-    borderColor: 'black',
+    marginBottom: 20,
+    borderColor: '#45009E',
     borderRadius: 14,
     borderWidth: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollContainer: {
+    paddingTop: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    height: '100%',
+  },
+  charCard: {
+    display: 'flex',
+    alignItems: 'center',
+    width: 350,
+    backgroundColor: 'transparent',
   },
 });
 
