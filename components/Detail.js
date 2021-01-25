@@ -7,13 +7,19 @@ const Detail = (props) => {
   let path = Images[character.name.toLowerCase()];
   let moves = character.moves;
   return (
-    <View>
-      <ScrollView style={styles.scrollContainer}>
-        <Text style={styles.name}>{character.name}</Text>
-        <Image style={styles.picture} source={path} />
-        <Text style={styles.info}>Debut: {character.debut}</Text>
-        <Text style={styles.info}>Universe: {character.universe}</Text>
-        <Text style={styles.info}>Weight: {character.weight}</Text>
+    <View style={styles.container}>
+      <View style={styles.scrollContainer}>
+        <View style={styles.nameContainer}>
+          <Text style={styles.name}>{character.name}</Text>
+        </View>
+        <View style={styles.pictureContainer}>
+          <Image style={styles.picture} source={path} />
+        </View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.info}>Debut: {character.debut}, </Text>
+          <Text style={styles.info}>Universe: {character.universe}, </Text>
+          <Text style={styles.info}>Weight: {character.weight}</Text>
+        </View>
         {/* <Text style={styles.moves}>Moves: {character.moves}</Text> */}
         <View style={styles.tableContainer}>
           {moves.map((move, detail) => {
@@ -24,31 +30,61 @@ const Detail = (props) => {
             );
           })}
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 60,
+    marginTop: 20,
+    marginLeft: 10,
+    marginRight: 10,
+  },
   scrollContainer: {
-    paddingTop: 20,
-    marginLeft: 20,
-    marginRight: 20,
+    borderWidth: 8,
+    borderColor: '#FFD700',
+    borderRadius: 20,
+    paddingTop: 5,
+    marginLeft: 0,
+    marginRight: 0,
     height: '100%',
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderColor: '#FFD700',
+    backgroundColor: '#FFD700',
+    borderWidth: 3,
+    marginTop: 3,
+    marginLeft: 25,
+    marginRight: 25,
   },
   info: {
     textAlign: 'center',
+  },
+  pictureContainer: {
+    marginLeft: 15,
+    marginRight: 15,
+    borderWidth: 6,
+    borderTopRightRadius: 15,
+    borderColor: 'grey',
   },
   picture: {
     margin: 20,
     alignSelf: 'center',
   },
+  nameContainer: {
+    marginTop: 0,
+    marginLeft: 20,
+  },
   name: {
-    marginTop: 10,
-    fontSize: 35,
-    textAlign: 'center',
+    fontSize: 28,
+    textAlign: 'left',
   },
   tableContainer: {
+    marginBottom: 0,
     marginTop: 20,
     alignSelf: 'center',
     width: '60%',
@@ -59,7 +95,6 @@ const styles = StyleSheet.create({
   moveContainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   moves: {
     marginTop: 10,
