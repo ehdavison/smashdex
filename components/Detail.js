@@ -9,26 +9,33 @@ const Detail = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.scrollContainer}>
-        <View style={styles.nameContainer}>
-          <Text style={styles.name}>{character.name}</Text>
-        </View>
-        <View style={styles.pictureContainer}>
-          <Image style={styles.picture} source={path} />
-        </View>
-        <View style={styles.infoContainer}>
-          <Text style={styles.info}>Debut: {character.debut}, </Text>
-          <Text style={styles.info}>Universe: {character.universe}, </Text>
-          <Text style={styles.info}>Weight: {character.weight}</Text>
-        </View>
-        {/* <Text style={styles.moves}>Moves: {character.moves}</Text> */}
-        <View style={styles.tableContainer}>
-          {moves.map((move, detail) => {
-            return (
-              <View style={styles.moveContainer} key={detail}>
-                <Text style={styles.moves}>{move}</Text>
-              </View>
-            );
-          })}
+        <View
+          style={
+            character.name === 'Mario'
+              ? styles.marioBackground
+              : styles.background
+          }>
+          <View style={styles.nameContainer}>
+            <Text style={styles.name}>{character.name}</Text>
+          </View>
+          <View style={styles.pictureContainer}>
+            <Image style={styles.picture} source={path} />
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.info}>Debut: {character.debut}, </Text>
+            <Text style={styles.info}>Universe: {character.universe}, </Text>
+            <Text style={styles.info}>Weight: {character.weight}</Text>
+          </View>
+          {/* <Text style={styles.moves}>Moves: {character.moves}</Text> */}
+          <View style={styles.tableContainer}>
+            {moves.map((move, detail) => {
+              return (
+                <View style={styles.moveContainer} key={detail}>
+                  <Text style={styles.moves}>{move}</Text>
+                </View>
+              );
+            })}
+          </View>
         </View>
       </View>
     </View>
@@ -43,10 +50,10 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   scrollContainer: {
-    borderWidth: 8,
+    borderWidth: 12,
     borderColor: '#FFD700',
     borderRadius: 20,
-    paddingTop: 5,
+
     marginLeft: 0,
     marginRight: 0,
     height: '100%',
@@ -101,6 +108,10 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
     fontSize: 20,
+  },
+  marioBackground: {
+    height: '100%',
+    backgroundColor: '#EA2424',
   },
 });
 

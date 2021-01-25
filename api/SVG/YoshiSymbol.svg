@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="250"
+   height="250"
+   id="svg2520"
+   sodipodi:version="0.32"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   version="1.0"
+   sodipodi:docname="YoshiSymbol.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs2522">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2528" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="117"
+     inkscape:cy="88"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="780"
+     inkscape:window-x="-8"
+     inkscape:window-y="25"
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2525">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(119.28572,-401.64789)">
+    <path
+       id="path3244"
+       style="display:inline;overflow:visible;visibility:visible;opacity:0.9;fill:#00de00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.37969;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
+       d="M 101.05222,487.13477 C 129.46773,534.42657 112.38339,600.71302 65.141358,629.1587 17.899323,657.60437 -47.715483,642.91095 -76.131028,595.61901 -104.54661,548.32708 -106.1131,448.3132 -58.871062,419.86766 -11.629028,391.42185 72.636603,439.84269 101.05222,487.13477 Z M 23.902507,526.0179 c -24.24367185,0 -43.911188,19.68846 -43.911202,43.95768 0,24.26937 19.66753015,43.95755 43.911202,43.95769 24.243673,0 43.911203,-19.68832 43.911203,-43.95769 0,-24.26936 -19.66753,-43.95754 -43.911203,-43.95768 z m -39.903605,-99.86438 c -8.129441,7.63384 -13.057011,17.48725 -13.057011,28.21225 0,24.26936 25.0912905,43.95768 55.977088,43.95768 21.447379,0 40.036646,-9.53577 49.427035,-23.46707 C 53.463498,449.9374 16.283391,428.33776 -16.001098,426.15352 Z m -63.388988,54.09504 c -6.033494,26.51696 -4.066092,58.13124 3.835228,83.42888 9.294537,-6.58528 15.814914,-22.3303 15.814928,-40.67906 0,-20.76352 -8.388976,-38.15124 -19.650156,-42.74982 z" />
+  </g>
+</svg>
