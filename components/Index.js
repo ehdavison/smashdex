@@ -30,9 +30,10 @@ const Index = (props) => {
                       selectedCharacter: character,
                     })
                   }>
+                  <View style={styles.bigAssTriangle}></View>
                   <View style={styles.charCard}>
                     <Text style={styles.cardName}>{character.name}</Text>
-                    <Image source={path} />
+                    <Image style={styles.char} source={path} />
                   </View>
                 </TouchableOpacity>
               </View>
@@ -66,6 +67,13 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     borderTopWidth: 10,
     borderWidth: 3,
+    zIndex: 8,
+  },
+  characterContainer: {
+    borderWidth: 4,
+    marginTop: 10,
+    padding: 0,
+    margin: 0,
   },
   characterBoxCorner: {
     width: 0,
@@ -81,7 +89,7 @@ const styles = StyleSheet.create({
     top: 100,
   },
   characterBoxCornerTwo: {
-    marginTop: -150,
+    marginTop: -180,
     width: 0,
     height: 0,
     backgroundColor: 'transparent',
@@ -93,6 +101,21 @@ const styles = StyleSheet.create({
     zIndex: 6,
     left: -10,
     top: 190,
+  },
+  bigAssTriangle: {
+    marginTop: -250,
+    width: 205,
+    height: 0,
+    backgroundColor: 'transparent',
+    borderStyle: 'solid',
+    borderRightWidth: 70,
+    borderTopWidth: 250,
+    borderRightColor: 'transparent',
+    borderTopColor: 'red',
+    right: -155,
+    bottom: -220,
+    transform: [{rotate: '180deg'}],
+    zIndex: -10,
   },
   scrollContainer: {
     marginLeft: 20,
@@ -107,6 +130,9 @@ const styles = StyleSheet.create({
   cardName: {
     fontSize: 25,
     marginTop: 3,
+  },
+  char: {
+    left: -70,
   },
 });
 
