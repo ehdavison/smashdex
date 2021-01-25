@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'white',
   },
   characters: {
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderRadius: 0,
     borderTopWidth: 10,
-    borderWidth: 5,
+    borderWidth: 3,
   },
   characterBoxCorner: {
     width: 0,
@@ -82,6 +81,7 @@ const styles = StyleSheet.create({
     top: 100,
   },
   characterBoxCornerTwo: {
+    marginTop: -150,
     width: 0,
     height: 0,
     backgroundColor: 'transparent',
@@ -95,10 +95,8 @@ const styles = StyleSheet.create({
     top: 190,
   },
   scrollContainer: {
-    paddingTop: 20,
     marginLeft: 20,
     marginRight: 20,
-    height: '100%',
   },
   charCard: {
     display: 'flex',
