@@ -14,7 +14,7 @@
             "debut": 1983,
             "id": 3,
             "image_path": "./api/images/luigi.png",
-            "moves": ["Super Jump Punch","Fireball","Luigi Cyclone","Throat Thrust","Green Missile"],
+            "moves": ["Super Jump Punch","Fireball","Luigi Cyclone","Throat Thrust"],
             "name": "Luigi",
             "tier": "D",
             "universe": "Mario",
