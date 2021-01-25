@@ -21,10 +21,36 @@ const Detail = (props) => {
           style={styles.background}>
           <View style={styles.nameContainer}>
             <Text style={styles.name}>{character.name}</Text>
+            <View
+              style={
+                character.name === 'Mario'
+                  ? styles.marioIconContainer
+                  : character.name === 'Luigi'
+                  ? styles.luigiIconContainer
+                  : styles.yoshiIconContainer
+              }>
+              <Image
+                style={
+                  character.name === 'Mario'
+                    ? styles.marioCharacterIcon
+                    : character.name === 'Luigi'
+                    ? styles.luigiCharacterIcon
+                    : styles.yoshiCharacterIcon
+                }
+                source={
+                  character.name === 'Mario'
+                    ? require('../api/images/icons/marioIcon.png')
+                    : character.name === 'Luigi'
+                    ? require('../api/images/icons/luigiIcon.png')
+                    : require('../api/images/icons/yoshiIcon.png')
+                }
+              />
+            </View>
           </View>
           <View style={styles.pictureContainer}>
             <Image style={styles.picture} source={path} />
           </View>
+
           <View style={styles.infoContainer}>
             <Text style={styles.info}>Debut: {character.debut}, </Text>
             <Text style={styles.info}>Universe: {character.universe}, </Text>
@@ -65,12 +91,14 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    borderColor: '#FFD700',
+    borderColor: '#D7BE69',
     backgroundColor: '#FFD700',
     borderWidth: 3,
     marginTop: 3,
     marginLeft: 25,
     marginRight: 25,
+    borderTopLeftRadius: 100,
+    borderBottomRightRadius: 100,
   },
   info: {
     textAlign: 'center',
@@ -81,6 +109,14 @@ const styles = StyleSheet.create({
     borderWidth: 6,
     borderTopRightRadius: 15,
     borderColor: 'grey',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: -5,
+      height: 5,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 3.8,
+    elevation: 5,
   },
   picture: {
     margin: 20,
@@ -89,32 +125,87 @@ const styles = StyleSheet.create({
   nameContainer: {
     marginTop: 0,
     marginLeft: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   name: {
-    fontSize: 28,
+    fontSize: 38,
     textAlign: 'left',
+    alignSelf: 'flex-end',
+    fontWeight: 'bold',
   },
   tableContainer: {
     marginBottom: 0,
     marginTop: 20,
-    alignSelf: 'center',
-    width: '60%',
-    borderRadius: 14,
-    borderColor: 'black',
-    borderWidth: 5,
+    alignItems: 'center',
   },
   moveContainer: {
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
+    borderTopWidth: 2,
+    borderTopColor: 'black',
+    width: 300,
+    height: 75,
   },
   moves: {
-    marginTop: 10,
     padding: 10,
     textAlign: 'center',
     fontSize: 20,
+    fontWeight: 'bold',
   },
   background: {
     height: '100%',
+  },
+  marioCharacterIcon: {
+    width: 45,
+    height: 45,
+    marginLeft: 3,
+    marginTop: 3,
+  },
+  marioIconContainer: {
+    borderWidth: 0,
+    borderRadius: 100,
+    backgroundColor: '#F77D7D',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 20,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  luigiCharacterIcon: {
+    width: 45,
+    height: 45,
+    marginLeft: 3,
+    marginTop: 3,
+  },
+  luigiIconContainer: {
+    borderWidth: 0,
+    borderRadius: 100,
+    backgroundColor: '#A6FC9B',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 20,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  yoshiCharacterIcon: {
+    width: 35,
+    height: 40,
+    marginLeft: 2,
+  },
+  yoshiIconContainer: {
+    width: 50,
+    height: 50,
+    borderWidth: 0,
+    borderRadius: 100,
+    backgroundColor: '#A6FC9B',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 20,
+    marginTop: 10,
+    marginBottom: 5,
   },
 });
 
