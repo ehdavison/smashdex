@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
 import Images from '../api/images/Images';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Detail = (props) => {
   let character = props.route.params.selectedCharacter;
@@ -9,12 +10,15 @@ const Detail = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.scrollContainer}>
-        <View
-          style={
+        <LinearGradient
+          colors={
             character.name === 'Mario'
-              ? styles.marioBackground
-              : styles.background
-          }>
+              ? ['#F70303', '#F77D7D', '#F70303', '#F77D7D', '#F70303']
+              : ['#29BF05', '#A6FC9B', '#29BF05', '#A6FC9B', '#29BF05']
+          }
+          useAngle={true}
+          angle={45}
+          style={styles.background}>
           <View style={styles.nameContainer}>
             <Text style={styles.name}>{character.name}</Text>
           </View>
@@ -36,7 +40,7 @@ const Detail = (props) => {
               );
             })}
           </View>
-        </View>
+        </LinearGradient>
       </View>
     </View>
   );
@@ -109,9 +113,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
   },
-  marioBackground: {
+  background: {
     height: '100%',
-    backgroundColor: '#EA2424',
   },
 });
 
