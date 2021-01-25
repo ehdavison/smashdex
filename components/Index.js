@@ -21,8 +21,8 @@ const Index = (props) => {
           let path = Images[character.name.toLowerCase()];
           return (
             <View style={styles.characterContainer} key={index}>
-              <View style={styles.characterBoxCornerTwo}></View>
-              <View style={styles.characterBoxCorner}></View>
+              <View style={styles.characterBoxCornerTwo} />
+              <View style={styles.characterBoxCorner} />
               <View style={styles.characters}>
                 <TouchableOpacity
                   onPress={() =>
@@ -30,10 +30,26 @@ const Index = (props) => {
                       selectedCharacter: character,
                     })
                   }>
-                  <View style={styles.bigAssTriangle}></View>
                   <View style={styles.charCard}>
                     <Text style={styles.cardName}>{character.name}</Text>
                     <Image style={styles.char} source={path} />
+                    <View style={styles.bigAssTriangle} />
+                    <Image
+                      style={
+                        character.name === 'Mario'
+                          ? styles.marioCharacterIcon
+                          : character.name === 'Luigi'
+                          ? styles.luigiCharacterIcon
+                          : styles.yoshiCharacterIcon
+                      }
+                      source={
+                        character.name === 'Mario'
+                          ? require('../api/images/icons/marioIcon.png')
+                          : character.name === 'Luigi'
+                          ? require('../api/images/icons/luigiIcon.png')
+                          : require('../api/images/icons/yoshiIcon.png')
+                      }
+                    />
                   </View>
                 </TouchableOpacity>
               </View>
@@ -53,6 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   characters: {
+    backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -67,10 +84,8 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     borderTopWidth: 10,
     borderWidth: 3,
-    zIndex: 8,
   },
   characterContainer: {
-    borderWidth: 4,
     marginTop: 10,
     padding: 0,
     margin: 0,
@@ -103,17 +118,18 @@ const styles = StyleSheet.create({
     top: 190,
   },
   bigAssTriangle: {
-    marginTop: -250,
-    width: 205,
-    height: 0,
-    backgroundColor: 'transparent',
+    marginTop: -185,
+    width: 270,
+    height: 180,
+    backgroundColor: 'red',
     borderStyle: 'solid',
-    borderRightWidth: 70,
-    borderTopWidth: 250,
-    borderRightColor: 'transparent',
-    borderTopColor: 'red',
-    right: -155,
-    bottom: -220,
+    borderRightWidth: 200,
+    borderTopWidth: 190,
+    borderRightColor: 'white',
+    borderTopColor: 'blue',
+    right: -48,
+
+    top: 0,
     transform: [{rotate: '180deg'}],
     zIndex: -10,
   },
@@ -129,10 +145,34 @@ const styles = StyleSheet.create({
   },
   cardName: {
     fontSize: 25,
-    marginTop: 3,
+    position: 'absolute',
+    right: 30,
+    bottom: 40,
+    color: 'white',
   },
   char: {
     left: -70,
+  },
+  marioCharacterIcon: {
+    position: 'absolute',
+    width: 80,
+    height: 90,
+    right: 10,
+    bottom: 90,
+  },
+  luigiCharacterIcon: {
+    position: 'absolute',
+    width: 80,
+    height: 90,
+    right: 10,
+    bottom: 90,
+  },
+  yoshiCharacterIcon: {
+    position: 'absolute',
+    width: 65,
+    height: 70,
+    right: 10,
+    bottom: 90,
   },
 });
 
